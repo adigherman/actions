@@ -1,0 +1,12 @@
+name: 'Get repo name'
+description: 'Retrieve the GitHub Repository name'
+inputs:
+  github_slug:  # The owner and repository name.
+    description: 'The repository slug'
+    required: true
+outputs:
+  repo_name: # id of output
+    description: 'The repository name'
+runs:
+  using: 'node12'
+  main: 'index.js'
