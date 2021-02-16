@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Get package version
-        uses: adigherman/actions/get-repo-version
+        uses: adigherman/actions/get-repo-version@master
         id: get-version
         with:
           github_slug: ${{ github.repository }}
