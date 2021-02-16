@@ -1,0 +1,23 @@
+on: [push]
+
+jobs:
+  get_repo_version_job:
+  runs-on: ${{ matrix.config.os }}
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }}) Get Repo Version
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: macOS-latest,   r: 'release', r_ver: '4.0'}
+          - {os: windows-latest, r: 'release', r_ver: '4.0'}
+          - {os: ubuntu-16.04,   r: 'release', r_ver: '4.0'}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get package version
+        uses: adigherman/actions/get-repo-version@v1
+        id: get-version
+        with:
+          github_slug: ${{ github.repository }}
+      - name: Echo repo version
+        run: echo "Package version is ${{ steps.get-version-number.outputs.PKG_VER }}"

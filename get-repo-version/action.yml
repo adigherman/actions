@@ -1,0 +1,23 @@
+name: 'Get repo version'
+description: 'Retrieve the Package Version number'
+inputs:
+  github_slug:
+    description: 'The repository slug'
+    required: true
+outputs:
+  repo_version:
+    description: 'The package version'
+    value: ${{ steps.get-version-number.outputs.PKG_VER }}
+runs:
+  using: 'composite'
+  steps:
+    - id: get-version-number
+        if: runner.os == 'Windows'
+        run: |
+          echo ::set-output name=PKG_VER::$(Rscript.exe -e "cat(read.dcf('DESCRIPTION')[, 'Version'])")
+        shell: bash
+        if: runner.os != 'Windows'
+        id: get_pkg_version_nonwin
+        run: |
+          echo ::set-output name=PKG_VER::$(Rscript -e 'cat(read.dcf("DESCRIPTION")[, "Version"])')
+        shell: bash
