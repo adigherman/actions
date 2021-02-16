@@ -12,12 +12,6 @@ runs:
   using: 'composite'
   steps:
     - id: get-version-number
-        if: runner.os == 'Windows'
-        run: |
-          echo ::set-output name=PKG_VER::$(Rscript.exe -e "cat(read.dcf('DESCRIPTION')[, 'Version'])")
-        shell: bash
-        if: runner.os != 'Windows'
-        id: get_pkg_version_nonwin
         run: |
           echo ::set-output name=PKG_VER::$(Rscript -e 'cat(read.dcf("DESCRIPTION")[, "Version"])')
         shell: bash
