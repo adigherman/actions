@@ -1,0 +1,4 @@
+Package: actions
+Type: Package
+Title: GitHub actions for the Neuroconductor project
+Version: 0.1
