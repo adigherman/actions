@@ -8,5 +8,5 @@ runs:
   using: "composite"
   steps:
     - id: get-version-number
-      run: echo ::set-output name=PKG_VER::$(Rscript -e 'cat(read.dcf("DESCRIPTION")[, "Version"])')
+      run: echo ::set-output name=PKG_VER::$(Rscript -e "cat(read.dcf('DESCRIPTION')[, 'Version'])")
       shell: bash
