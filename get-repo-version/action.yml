@@ -1,13 +1,12 @@
 name: 'Get Repo Version'
 description: 'Retrieve the Package Version number'
 outputs:
-  repo_version:
+  pkg_version:
     description: 'The package version'
     value: ${{ steps.get-version-number.outputs.PKG_VER }}
 runs:
   using: "composite"
   steps:
-    - name: Get the repo version (windows)
       id: get-version-number
       run: "echo ::set-output name=PKG_VER::$(echo $RANDOM)"
       shell: bash
