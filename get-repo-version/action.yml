@@ -1,4 +1,4 @@
-name: 'Get repo version'
+name: 'Get Repo Version'
 description: 'Retrieve the Package Version number'
 inputs:
   github_slug:
