@@ -8,6 +8,5 @@ runs:
   using: "composite"
   steps:
     - name: Get the repo version (windows)
-      if: runner.os == 'Windows'
       id: get-version-number
       run: echo ::set-output name=PKG_VER::$(Rscript -e "cat(read.dcf('DESCRIPTION')[, 'Version'])")
