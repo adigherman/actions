@@ -5,8 +5,8 @@ outputs:
     description: 'The package version'
     value: ${{ steps.get-version-number.outputs.PKG_VER }}
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - id: get-version-number
-        run: echo "::set-output name=PKG_VER::$(echo $RANDOM)"
-        shell: bash
+      run: echo "::set-output name=PKG_VER::$(echo $RANDOM)"
+      shell: bash
