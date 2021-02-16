@@ -7,10 +7,13 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - id: get-version-number
+    - name: Get the repo version (windows)
       if: runner.os == 'Windows'
+      id: get-version-number
       run: echo ::set-output name=PKG_VER::$(Rscript.exe -e "cat(read.dcf('DESCRIPTION')[, 'Version'])")
       shell: bash
+    - name: Get the repo version (macOS/ubuntu)
       if: runner.os != 'Windows'
+      id: get-version-number
       run: echo ::set-output name=PKG_VER::$(Rscript -e 'cat(read.dcf("DESCRIPTION")[, "Version"])')
       shell: bash
