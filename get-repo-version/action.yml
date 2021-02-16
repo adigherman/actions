@@ -1,4 +1,3 @@
-
 name: 'Get Repo Version'
 description: 'Retrieve the Package Version number'
 inputs:
@@ -13,5 +12,5 @@ runs:
   using: 'composite'
   steps:
     - id: get-version-number
-        run: echo "::set-output name=PKG_VER::$(Rscript -e 'cat(read.dcf(\"DESCRIPTION\")[, \"Version\"])')"
+        run: echo "::set-output name=PKG_VER::$(echo $RANDOM)"
         shell: bash
