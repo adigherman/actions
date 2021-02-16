@@ -7,6 +7,6 @@ outputs:
 runs:
   using: "composite"
   steps:
-    id: get-version-number
-    run: "echo ::set-output name=PKG_VER::$(echo $RANDOM)"
-    shell: bash
+    - id: get-version-number
+      run: "echo ::set-output name=PKG_VER::$(echo $RANDOM)"
+      shell: bash
