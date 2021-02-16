@@ -19,8 +19,6 @@ jobs:
           r-version: ${{ matrix.config.r }}
       - name: Get package version
         uses: adigherman/actions/get-repo-version@master
-        id: get-version
-        with:
-          github_slug: ${{ github.repository }}
+        id: get-version-number
       - name: Echo repo version
         run: echo "Package version is ${{ steps.get-version-number.outputs.PKG_VER }}"
