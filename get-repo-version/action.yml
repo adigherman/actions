@@ -10,3 +10,4 @@ runs:
     - name: Get the repo version (windows)
       id: get-version-number
       run: echo ::set-output name=PKG_VER::$(Rscript -e "cat(read.dcf('DESCRIPTION')[, 'Version'])")
+      shell: bash
