@@ -2,15 +2,15 @@ on: [push]
 
 jobs:
   get_repo_version_job:
-  runs-on: ${{ matrix.config.os }}
-    name: ${{ matrix.config.os }} (${{ matrix.config.r }}) Get Repo Version
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - {os: macOS-latest,   r: 'release', r_ver: '4.0'}
-          - {os: windows-latest, r: 'release', r_ver: '4.0'}
-          - {os: ubuntu-16.04,   r: 'release', r_ver: '4.0'}
+    runs-on: ${{ matrix.config.os }}
+      name: ${{ matrix.config.os }} (${{ matrix.config.r }}) Get Repo Version
+      strategy:
+        fail-fast: false
+        matrix:
+          config:
+            - {os: macOS-latest,   r: 'release', r_ver: '4.0'}
+            - {os: windows-latest, r: 'release', r_ver: '4.0'}
+            - {os: ubuntu-16.04,   r: 'release', r_ver: '4.0'}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
