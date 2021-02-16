@@ -1,7 +1,7 @@
 name: 'Get Repo Version'
 description: 'Retrieve the Package Version number'
 outputs:
-  pkg_version:
+  package_version:
     description: 'The package version'
     value: ${{ steps.get-version-number.outputs.PKG_VER }}
 runs:

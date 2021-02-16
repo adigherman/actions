@@ -21,4 +21,4 @@ jobs:
         uses: adigherman/actions/get-repo-version@master
         id: get-version-number
       - name: Echo repo version
-        run: echo "Package version is ${{ steps.get-version-number.outputs.pkg_version }}"
+        run: echo "Package version is ${{ steps.get-version-number.outputs.package_version }}"
