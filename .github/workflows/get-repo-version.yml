@@ -3,7 +3,7 @@ on: [push]
 jobs:
   get_repo_version_job:
     runs-on: ${{ matrix.config.os }}
-      name: ${{ matrix.config.os }} (${{ matrix.config.r }}) Get Repo Version
+      name: ${{ matrix.config.os }} (${{ matrix.config.r }})
       strategy:
         fail-fast: false
         matrix:
