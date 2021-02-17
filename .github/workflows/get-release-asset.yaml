@@ -1,0 +1,39 @@
+on: [push]
+
+jobs:
+  get_release_asset_job:
+    runs-on: ${{ matrix.config.os }}
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: macOS-latest,   r: 'release', r_ver: '4.0'}
+          - {os: windows-latest, r: 'release', r_ver: '4.0'}
+          - {os: ubuntu-16.04,   r: 'release', r_ver: '4.0'}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@master
+        with:
+          r-version: ${{ matrix.config.r }}
+      - name: Get repo name
+        uses: adigherman/actions/get-repo-name@master
+        id: get-name
+        with:
+          github_slug: ${{ github.repository }}
+      - name: Get package version
+        uses: adigherman/actions/get-repo-version@master
+        id: get-version-number
+      - name: Get release asset info
+        uses: adigherman/actions/get-release-asset@master
+        id: get-release-asset
+        with:
+          repo_name: ${{ steps.get-name.outputs.repo_name }}
+          repo_version: ${{ steps.get-version-number.outputs.package_version }}
+          runner_os: runner.os
+          R_version: ${{ matrix.config.r }}
+      - name: Echo asset name
+        run: echo "Asset name is ${{ steps.get-release-asset.outputs.asset_name }}"
+      - name: Echo asset path
+        run: echo "Asset path is ${{ steps.get-release-asset.outputs.asset_path }}"

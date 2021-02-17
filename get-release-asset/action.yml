@@ -1,0 +1,23 @@
+name: 'Get release asset'
+description: 'Build the release asset path and name'
+inputs:
+  repo_name:
+    description: 'The name of the package'
+    required: true
+  repo_version:
+    description: 'Package version'
+    required:
+  runner_os:  
+    description: 'The OS'
+    required: true
+  R_version:
+    description: 'Job R version'
+    required: true
+outputs:
+  asset_path: 
+    description: 'The path of the asset'
+  asset_name: 
+    description: 'The name of the asset'
+runs:
+  using: 'node12'
+  main: 'index.js'
