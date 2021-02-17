@@ -11,26 +11,26 @@ try {
   console.log(`Version:  ${repo_version}`);
   console.log(`OS:  ${runner_os}`);
   
-  const asset_name = repo_name+'_'+repo_version;
-  const asset_path = 'check/'+repo_name+'_'+repo_version;
+  let asset_name = repo_name+'_'+repo_version;
+  let asset_path = 'check/'+repo_name+'_'+repo_version;
   
   switch(runner_os){
     case 'macOS':
-      asset_name.concat('_R',R_version,'.tgz');
+      asset_name += '_R',R_version,'.tgz';
       core.setOutput("asset_name", asset_name);
-      asset_path.concat('.tgz');
+      asset_path += '.tgz';
       core.setOutput("asset_path", asset_path);
       break;
     case 'Windows':
-      asset_name.concat('_R',R_version,'.zip');
+      asset_name += '_R',R_version,'.zip';
       core.setOutput("asset_name", asset_name);
-      asset_path.concat('.zip');
+      asset_path += '.zip';
       core.setOutput("asset_path", asset_path);
       break;
     default:
-      asset_name.concat('_R_x86_64-pc-linux-gnu_R',R_version,'.tar.gz');
+      asset_name += '_R_x86_64-pc-linux-gnu_R',R_version,'.tar.gz';
       core.setOutput("asset_name", asset_name);
-      asset_path.concat('_R_x86_64-pc-linux-gnu.tar.gz');
+      asset_path += '_R_x86_64-pc-linux-gnu.tar.gz';
       core.setOutput("asset_path", asset_path);
   }
 } catch (error) {
