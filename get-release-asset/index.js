@@ -16,19 +16,19 @@ try {
   
   switch(runner_os){
     case 'macOS':
-      asset_name += '_R',R_version,'.tgz';
+      asset_name += '_R' + R_version + '.tgz';
       core.setOutput("asset_name", asset_name);
       asset_path += '.tgz';
       core.setOutput("asset_path", asset_path);
       break;
     case 'Windows':
-      asset_name += '_R',R_version,'.zip';
+      asset_name += '_R' + R_version + '.zip';
       core.setOutput("asset_name", asset_name);
       asset_path += '.zip';
       core.setOutput("asset_path", asset_path);
       break;
     default:
-      asset_name += '_R_x86_64-pc-linux-gnu_R',R_version,'.tar.gz';
+      asset_name += '_R_x86_64-pc-linux-gnu_R' + R_version + '.tar.gz';
       core.setOutput("asset_name", asset_name);
       asset_path += '_R_x86_64-pc-linux-gnu.tar.gz';
       core.setOutput("asset_path", asset_path);
