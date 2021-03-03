@@ -33,4 +33,6 @@ jobs:
         uses: adigherman/actions/delete-release-by-tag@master
         id: delete-release
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
           tag: '1.0.test'
