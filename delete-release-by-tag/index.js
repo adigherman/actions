@@ -25,7 +25,7 @@ octokit.repos.getReleaseByTag({
         owner,
         repo,
         release_id
-    });
+    })
 }).catch(
     err =>{
         if(err.status === 404){
@@ -35,4 +35,4 @@ octokit.repos.getReleaseByTag({
         console.error("Can't get tag based Release");
         console.error(err);
     }
-);
+)
