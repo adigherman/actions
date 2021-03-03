@@ -1,0 +1,16 @@
+name: 'Delete release by tag'
+description: 'Delete a release specified by tag name'
+inputs:
+  github_token:
+    description: 'Github Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}'
+    required: true
+  repository:
+    description: 'Repo name. Default or empty value represents current github repository (${GITHUB_REPOSITORY})'
+    default: ''
+    required: false
+  tag:
+    description: 'Release tag. Used to identify the release to be deleted'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
