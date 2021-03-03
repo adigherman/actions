@@ -1,4 +1,5 @@
 const { Octokit } = require("@octokit/rest");
+const core = require('@actions/core');
 const {env} = require ("process");
 const token = env.INPUT_GITHUB_TOKEN;
 const repository = env.INPUT_REPOSITORY || env.GITHUB_REPOSITORY;
