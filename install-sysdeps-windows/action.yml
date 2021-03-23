@@ -1,0 +1,7 @@
+name: 'Install windows System Dependencies'
+description: 'Install a comprehensive list of system dependencies'
+runs:
+  using: "composite"
+  steps:
+    - name: Install System Dependencies (windows)
+      run: pacman --noconfirm -S --needed - < ${{ github.action_path }}/pacman.txt
