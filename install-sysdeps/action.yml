@@ -1,0 +1,22 @@
+name: 'Install System Dependencies'
+description: 'Install a comprehensive list of system dependencies'
+inputs:
+  runner_os:  
+    description: 'The OS'
+    required: true
+  R_version:
+    description: 'Job R version'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Install System Dependencies (linux)
+      if: runner.os == 'Linux'
+      run: ${{ github.action_path }}/linux.sh
+      shell: bash
+    - name: Install System Dependencies (macOS)
+      if: runner.os == 'macOS'
+      run: ${{ github.action_path }}/macos.sh
+      shell: bash
+    - name: Install System Dependencies (Windows)
+      if: runner.os == 'Windows'
