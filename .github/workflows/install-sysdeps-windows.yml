@@ -16,6 +16,6 @@ jobs:
           msystem: MINGW64
           update: true
           install: git mingw-w64-x86_64-toolchain
-      - name: Get release asset info
+      - name: Install System Dependencies
         uses: adigherman/actions/install-sysdeps-windows@master
         id: install-sysdeps-windows
