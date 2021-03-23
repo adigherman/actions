@@ -4,6 +4,5 @@ runs:
   using: "composite"
   steps:
     - name: Install System Dependencies (linux)
-      if: runner.os == 'Linux'
       run: ${{ github.action_path }}/linux.sh
       shell: bash
