@@ -1,0 +1,9 @@
+name: 'Install Linux System Dependencies'
+description: 'Install a comprehensive list of system dependencies'
+runs:
+  using: "composite"
+  steps:
+    - name: Install System Dependencies (linux)
+      if: runner.os == 'Linux'
+      run: ${{ github.action_path }}/linux.sh
+      shell: bash

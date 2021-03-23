@@ -8,13 +8,8 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: macOS-latest,   r: 'release', r_ver: '4.0'}
-#          - {os: windows-latest, r: 'release', r_ver: '4.0'}
           - {os: ubuntu-20.04,   r: 'release', r_ver: '4.0'}
     steps:
       - name: Get release asset info
-        uses: adigherman/actions/install-sysdeps@master
-        id: install-sysdeps
-        with:
-          runner_os: ${{ runner.os }}
-          R_version: ${{ matrix.config.r_ver }}
+        uses: adigherman/actions/install-sysdeps-linux@master
+        id: install-sysdeps-linux
