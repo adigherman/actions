@@ -3,6 +3,7 @@ on: [push]
 jobs:
   install_sysdeps_job:
     runs-on: ${{ matrix.config.os }}
+    if: "contains(github.event.head_commit.message, 'install-sysdeps-linux')"
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
     strategy:
       fail-fast: false
