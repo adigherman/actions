@@ -4,5 +4,5 @@ runs:
   using: "composite"
   steps:
     - name: Install System Dependencies (windows)
-      run: pacman --noconfirm -S --needed - < ${GITHUB_ACTION_PATH}/pacman.txt
+      run: ${GITHUB_ACTION_PATH}/pacman.sh
       shell: msys2 {0}
