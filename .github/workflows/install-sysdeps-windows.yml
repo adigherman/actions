@@ -11,9 +11,6 @@ jobs:
         config:
           - {os: windows-latest,   r: 'release', r_ver: '4.0'}
     steps:
-      - uses: r-lib/actions/setup-r@master
-        with:
-          r-version: ${{ matrix.config.r }}
       - uses: msys2/setup-msys2@v2
         with:
           msystem: MINGW64
