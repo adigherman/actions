@@ -1,6 +1,6 @@
 pacman -Syu
-pacman --noconfirm -S mingw-w64-x86_64-x86_64-aom
-pacman --noconfirm -S mingw-w64-x86_64-x86_64-argtable
+pacman --noconfirm -S mingw-w64-x86_64-aom
+pacman --noconfirm -S mingw-w64-x86_64-argtable
 pacman --noconfirm -S mingw-w64-x86_64-arrow
 pacman --noconfirm -S mingw-w64-x86_64-aws-sdk-cpp
 pacman --noconfirm -S mingw-w64-x86_64-binutils
