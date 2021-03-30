@@ -3,12 +3,6 @@ description: 'Install a comprehensive list of system dependencies'
 runs:
   using: "composite"
   steps:
-    - name: Add RTools pacman repo
-      run: |
-        echo -e "[rtools-mingw64]" >> /etc/pacman.conf
-        echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf
-        echo "Server = https://dl.bintray.com/rtools/mingw64" >> /etc/pacman.conf
-      shell: msys2 {0}
     - name: Install System Dependencies (windows)
       run: ${GITHUB_ACTION_PATH}/pacman.sh
       shell: msys2 {0}
