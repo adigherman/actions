@@ -18,7 +18,7 @@ jobs:
           install: git mingw-w64-x86_64-toolchain
       - name: Install JAGS
         run: |
-          curl.exe -o wjags.exe --url https://github.com/adigherman/actions/raw/master/files/JAGS-4.3.0.exe
-          JAGS-4.3.0.exe /S
-          del JAGS-4.3.0.exe
+          curl.exe -o wjags.exe --url https://github.com/muschellij2/neuroc_dependencies/raw/master/JAGS-4.2.0-Rtools33.exe
+          wjags.exe /S
+          del wjags.exe
         shell: cmd
