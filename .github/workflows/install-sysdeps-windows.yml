@@ -15,6 +15,6 @@ jobs:
         run: |
           curl.exe -o wjags.exe --url https://github.com/muschellij2/neuroc_dependencies/raw/master/JAGS-4.2.0-Rtools33.exe
           dir
-          ${GITHUB_ACTION_PATH}/wjags.exe /S
-          del ${GITHUB_ACTION_PATH}/wjags.exe
+          wjags.exe /S
+          del wjags.exe
         shell: cmd
