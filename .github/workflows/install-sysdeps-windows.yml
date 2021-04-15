@@ -19,3 +19,9 @@ jobs:
       - name: Install System Dependencies
         uses: adigherman/actions/install-sysdeps-windows@master
         id: install-sysdeps-windows
+      - name: Install JAGS
+        run: |
+          curl.exe -o wjags.exe --url https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Windows/JAGS-4.3.0.exe/download
+          wjags.exe /S
+          del wjags.exe
+        shell: cmd 
