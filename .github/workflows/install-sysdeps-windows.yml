@@ -11,6 +11,9 @@ jobs:
         config:
           - {os: windows-latest,   r: 'release', r_ver: '4.0'}
     steps:
+      - uses: r-lib/actions/setup-r@master
+        with:
+          r-version: ${{ matrix.config.r }}
       - name: Install JAGS
         run: |
           curl.exe -o JAGS-4.2.0.exe -L https://github.com/muschellij2/neuroc_dependencies/raw/master/JAGS-4.2.0-Rtools33.exe
