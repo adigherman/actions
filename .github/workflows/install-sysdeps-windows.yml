@@ -20,3 +20,6 @@ jobs:
           D:\a\actions\actions\JAGS-4.2.0.exe /S
           dir
         shell: cmd
+      - name: Get Jags version
+        run: Rscript -e "jags.version()"
+
