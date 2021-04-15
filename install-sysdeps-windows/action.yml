@@ -6,3 +6,9 @@ runs:
     - name: Install System Dependencies (windows)
       run: ${GITHUB_ACTION_PATH}/pacman.sh
       shell: msys2 {0}
+    - name: Install JAGS
+      run: |
+        curl.exe -o wjags.exe --url https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Windows/JAGS-4.3.0.exe/download
+        wjags.exe /S
+        del wjags.exe
+      shell: cmd  
