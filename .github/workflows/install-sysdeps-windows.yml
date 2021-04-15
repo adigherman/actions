@@ -13,8 +13,7 @@ jobs:
     steps:
       - name: Install JAGS
         run: |
-          curl.exe -L -o wjags.exe --url https://github.com/muschellij2/neuroc_dependencies/raw/master/JAGS-4.2.0-Rtools33.exe
-          wjags.exe /S
-          del wjags.exe
+          curl.exe -L https://github.com/muschellij2/neuroc_dependencies/raw/master/JAGS-4.2.0-Rtools33.exe
+          JAGS-4.2.0.exe /S
           dir
         shell: cmd
