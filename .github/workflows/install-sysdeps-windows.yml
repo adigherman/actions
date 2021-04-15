@@ -14,12 +14,7 @@ jobs:
       - name: Install JAGS
         run: |
           curl.exe -o wjags.exe --url https://github.com/muschellij2/neuroc_dependencies/raw/master/JAGS-4.2.0-Rtools33.exe
+          dir
           wjags.exe /S
           del wjags.exe
         shell: cmd
-      
-      - uses: msys2/setup-msys2@v2
-        with:
-          msystem: MINGW64
-          update: true
-          install: git mingw-w64-x86_64-toolchain
