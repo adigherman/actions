@@ -9,5 +9,5 @@ runs:
     - name: Install JAGS
       run: |
         curl.exe -o JAGS-4.2.0-Rtools33.exe -L https://github.com/muschellij2/neuroc_dependencies/raw/master/JAGS-4.2.0-Rtools33.exe
-        D:\a\actions\actions\JAGS-4.2.0-Rtools33.exe /S
+        JAGS-4.2.0-Rtools33.exe /S
       shell: cmd 
