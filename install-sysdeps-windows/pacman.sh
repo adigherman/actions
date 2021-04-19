@@ -55,7 +55,6 @@ pacman --noconfirm -S mingw-w64-x86_64-imagemagick
 pacman --noconfirm -S mingw-w64-x86_64-intel-tbb
 pacman --noconfirm -S mingw-w64-x86_64-isl
 pacman --noconfirm -S mingw-w64-x86_64-itk
-pacman --noconfirm -S mingw-w64-x86_64-jags
 pacman --noconfirm -S mingw-w64-x86_64-jasper
 pacman --noconfirm -S mingw-w64-x86_64-json-c
 pacman --noconfirm -S mingw-w64-x86_64-jsoncpp
