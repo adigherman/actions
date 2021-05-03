@@ -30,3 +30,4 @@ brew install zeromq
 brew install udunits 
 brew install webp 
 brew install rust
+brew install xquartz
