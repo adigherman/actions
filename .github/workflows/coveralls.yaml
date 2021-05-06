@@ -12,10 +12,12 @@ jobs:
           - {os: ubuntu-16.04,   r: 'release', r_ver: '4.0'}
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
     steps:
-      - uses: octokit/request-action@v2.x
-        id: get_json
+      - name: Enable Coveralls repo
+        uses: octokit/request-action@v2.x
+        id: enable_coveralls
         with:
-          route: GET https://coveralls.io/github/adigherman/gifti
+          route: POST https://coveralls.io/api/repos/github/adigherman/actions
 
-      - run: "echo latest release: ${{ steps.get_json.outputs.data }}"
+      - run: "echo latest release: ${{ steps.enable_coveralls.outputs.data }}"
