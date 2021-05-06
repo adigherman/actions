@@ -19,5 +19,4 @@ jobs:
         id: enable_coveralls
         with:
           route: POST https://coveralls.io/api/repos/github/adigherman/actions
-
-      - run: "echo latest release: ${{ steps.enable_coveralls.outputs.data }}"
+        - run: "echo latest release: ${{ steps.enable_coveralls.outputs.data }}"
