@@ -18,6 +18,6 @@ jobs:
         uses: octokit/request-action@v2.x
         id: enable_coveralls
         with:
-          route: POST https://coveralls.io/api/repos/github/adigherman/actions
-        
+          route: POST https://coveralls.io/api/repos
+          data: '{"repo": {"service": "github","name": "adigherman/actions"}}'
       - run: "echo latest release: ${{ steps.enable_coveralls.outputs.data }}"
