@@ -31,9 +31,14 @@ jobs:
             -H "Authorization: token $COVERALLS_TOKEN" \
             https://coveralls.io/api/repos/github/adigherman/actions \
             | jq '.token')" >> $GITHUB_ENV
-            echo "action_state=yellow" >> $GITHUB_ENV
-            echo "${{ env.COVERALLS_REPO_TOKEN }}"
-            echo "${{ env.action_state }}"
+      - name: Set the value
+        id: step_one
+        run: |
+          echo "action_state=yellow" >> $GITHUB_ENV
+      - name: Use the value
+        id: step_two
+        run: |
+          echo "${{ env.action_state }}"
   print_repo_token:
     needs: get_repo_version_job
     runs-on: ${{ matrix.config.os }}
