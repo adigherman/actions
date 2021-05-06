@@ -20,7 +20,7 @@ jobs:
           curl -s -H "Accept: application/json" \
             -H "Content-Type: application/json" \
             -H "Authorization: token $COVERALLS_TOKEN" \
-            -d '{"repo": {"service": "github","name": "adigherman/actions"}}' \
+            -d '{"repo": {"service": "github","name": "$GITHUB_REPOSITORY"}}' \
             -X POST https://coveralls.io/api/repos
       - name: Get Repo Token
         id: get_coverall_repo_token
@@ -29,28 +29,9 @@ jobs:
             curl -s -H "Accept: application/json" \
             -H "Content-Type: application/json" \
             -H "Authorization: token $COVERALLS_TOKEN" \
-            https://coveralls.io/api/repos/github/adigherman/actions \
+            https://coveralls.io/api/repos/github/$GITHUB_REPOSITORY \
             | jq '.token')" >> $GITHUB_ENV
-      - name: Set the value
-        id: step_one
-        run: |
-          echo "action_state=yellow" >> $GITHUB_ENV
       - name: Use the value
         id: step_two
         run: |
           echo "${{ env.COVERALLS_REPO_TOKEN }}"
-  print_repo_token:
-    needs: get_repo_version_job
-    runs-on: ${{ matrix.config.os }}
-    if: "contains(github.event.head_commit.message, 'cv')"
-    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - {os: ubuntu-16.04,   r: 'release', r_ver: '4.0'}
-    steps:
-      - name: Print Repo Token
-        run: |
-          echo "${{ env.COVERALLS_REPO_TOKEN }}"
-          echo "${{ env.action_state }}"
