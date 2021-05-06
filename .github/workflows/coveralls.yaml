@@ -20,7 +20,7 @@ jobs:
           curl -s -H "Accept: application/json" \
             -H "Content-Type: application/json" \
             -H "Authorization: token $COVERALLS_TOKEN" \
-            -d '{"repo": {"service": "github","name": "$GITHUB_REPOSITORY"}}' \
+            -d '{"repo": {"service": "github","name": "'$GITHUB_REPOSITORY'"}}' \
             -X POST https://coveralls.io/api/repos
       - name: Get Repo Token
         id: get_coverall_repo_token
