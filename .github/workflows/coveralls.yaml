@@ -32,5 +32,5 @@ jobs:
             https://coveralls.io/api/repos/github/adigherman/actions \
             | jq '.token')"
           echo {{ steps.get_coverall_repo_token.outputs.COVERALLS_REPO_TOKEN }}
-      - name: Print repo Token
+      - name: Print Repo Token
         run: echo "REPO TOKEN IS {{ steps.get_coverall_repo_token.outputs.COVERALLS_REPO_TOKEN }} "
