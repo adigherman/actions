@@ -14,8 +14,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
     steps:
-    
-      - name: Enable Coveralls repo
+      - name: Enable Repo on Coveralls
         id: enable_coveralls
         run: |
           curl -i -H "Accept: application/json" \
@@ -23,3 +22,10 @@ jobs:
             -H "Authorization: token $COVERALLS_TOKEN" \
             -d '{"repo": {"service": "github","name": "adigherman/actions"}}' \
             -X POST https://coveralls.io/api/repos
+      - name: Get Repo Token
+        id: get_coverall_repo_token
+        run: |
+          curl -i -H "Accept: application/json" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: token $COVERALLS_TOKEN" \
+            https://coveralls.io/api/repos/github/adigherman/actions
