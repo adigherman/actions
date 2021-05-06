@@ -10,11 +10,12 @@ jobs:
       matrix:
         config:
           - {os: ubuntu-16.04,   r: 'release', r_ver: '4.0'}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: octokit/request-action@v2.x
         id: get_json
         with:
           route: GET https://coveralls.io/github/lemurheavy/coveralls-ruby.json
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        - run: "echo latest release: ${{ steps.get_json.outputs.data }}"
+
+      - run: "echo latest release: ${{ steps.get_json.outputs.data }}"
