@@ -31,6 +31,6 @@ jobs:
             -H "Authorization: token $COVERALLS_TOKEN" \
             https://coveralls.io/api/repos/github/adigherman/actions \
             | jq '.token')"
-          echo "adi"
+          echo {{ steps.get_coverall_repo_token.outputs.COVERALLS_REPO_TOKEN }}
       - name: Print repo Token
         run: echo "REPO TOKEN IS {{ steps.get_coverall_repo_token.outputs.COVERALLS_REPO_TOKEN }} "
