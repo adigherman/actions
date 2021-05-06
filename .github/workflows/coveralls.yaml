@@ -31,6 +31,7 @@ jobs:
             -H "Authorization: token $COVERALLS_TOKEN" \
             https://coveralls.io/api/repos/github/adigherman/actions \
             | jq '.token')" >> $GITHUB_ENV
+            echo "action_state=yellow" >> $GITHUB_ENV
   print_repo_token:
     needs: get_repo_version_job
     runs-on: ${{ matrix.config.os }}
@@ -43,4 +44,6 @@ jobs:
           - {os: ubuntu-16.04,   r: 'release', r_ver: '4.0'}
     steps:
       - name: Print Repo Token
-        run: echo "${{ env.COVERALLS_REPO_TOKEN }}"
+        run: |
+          echo "${{ env.COVERALLS_REPO_TOKEN }}"
+          echo "${{ env.action_state }}"
