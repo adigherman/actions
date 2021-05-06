@@ -14,11 +14,8 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
     steps:
+    
       - name: Enable Coveralls repo
-        uses: octokit/request-action@v2.x
         id: enable_coveralls
-        with:
-          route: POST https://coveralls.io/api/repos
-          header: '{"Accept": "application/json", "Content-Type": "application/json", "Authorization": "token NDay2IKfpRCGPx4m1AaVIGSlWOS0MAIMhatze"}'
-          data: '{"repo": {"service": "github","name": "adigherman/actions"}}'
-      - run: "echo latest release: ${{ steps.enable_coveralls.outputs.data }}"
+        run: |
+          curl -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: token $COVERALLS_TOKEN" -d '{"repo": {"service": "github","name": "adigherman/actions"}}' -X POST https://coveralls.io/api/repos"
