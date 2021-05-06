@@ -19,5 +19,7 @@ jobs:
         id: enable_coveralls
         with:
           route: POST https://coveralls.io/api/repos
+          options.header: 'Accept: application/json'
+          options.header: 'Content-Type: application/json'
           options.data: '{"repo": {"service": "github","name": "adigherman/actions"}}'
       - run: "echo latest release: ${{ steps.enable_coveralls.outputs.data }}"
