@@ -33,6 +33,14 @@ jobs:
             | jq '.token')"
   print_repo_token:
     needs: get_repo_version_job
+    runs-on: ${{ matrix.config.os }}
+    if: "contains(github.event.head_commit.message, 'coveralls')"
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: ubuntu-16.04,   r: 'release', r_ver: '4.0'}
     steps:
       - name: Print Repo Token
         run: echo "REPO TOKEN IS {{ steps.get_coverall_repo_token.outputs.COVERALLS_REPO_TOKEN }} "
