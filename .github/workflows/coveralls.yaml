@@ -17,4 +17,4 @@ jobs:
           route: GET https://coveralls.io/github/lemurheavy/coveralls-ruby.json
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        - run: "echo latest release: ${{ steps.get_json.outputs.data }}"
+      - run: "echo latest release: ${{ steps.get_json.outputs.data }}"
