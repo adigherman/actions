@@ -18,4 +18,4 @@ jobs:
       - name: Enable Coveralls repo
         id: enable_coveralls
         run: |
-          curl -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: token $COVERALLS_TOKEN" -d '{"repo": {"service": "github","name": "adigherman/actions"}}' -X POST https://coveralls.io/api/repos"
+          curl -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: token $COVERALLS_TOKEN" -d '{"repo": {"service": "github","name": "adigherman/actions"}}' -X POST https://coveralls.io/api/repos
