@@ -16,6 +16,6 @@ jobs:
       - uses: octokit/request-action@v2.x
         id: get_json
         with:
-          route: GET https://coveralls.io/github/lemurheavy/coveralls-ruby.json
+          route: GET https://coveralls.io/github/adigherman/gifti
 
       - run: "echo latest release: ${{ steps.get_json.outputs.data }}"
