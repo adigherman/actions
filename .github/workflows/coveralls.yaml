@@ -25,7 +25,7 @@ jobs:
       - name: Get Repo Token
         id: get_coverall_repo_token
         run: |
-          curl -i -H "Accept: application/json" \
+          curl -s -H "Accept: application/json" \
             -H "Content-Type: application/json" \
             -H "Authorization: token $COVERALLS_TOKEN" \
             https://coveralls.io/api/repos/github/adigherman/actions \
