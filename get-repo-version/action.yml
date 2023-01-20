@@ -8,5 +8,5 @@ runs:
   using: "composite"
   steps:
     - id: get-version-number
-      run: echo name=PKG_VER::$(Rscript -e "cat(read.dcf('DESCRIPTION')[, 'Version'])") >> $GITHUB_OUTPUT
+      run: echo PKG_VER=$(Rscript -e "cat(read.dcf('DESCRIPTION')[, 'Version'])") >> $GITHUB_OUTPUT
       shell: bash
