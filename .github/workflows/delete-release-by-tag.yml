@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Get tag name
         id: get_tag_name
-        run: echo ::set-output name=VERSION::'1.0.test'
+        run: echo set-output name=VERSION::'1.0.test' >> $GITHUB_OUTPUT
 
       - name: Create release
         id: create_release
