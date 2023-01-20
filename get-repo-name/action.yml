@@ -8,5 +8,5 @@ outputs:
   repo_name: # id of output
     description: 'The repository name'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
