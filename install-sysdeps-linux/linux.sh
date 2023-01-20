@@ -24,7 +24,6 @@ sudo apt-get install -y install gdal
 sudo apt-get install -y insighttoolkit4-python libinsighttoolkit4-dev
 sudo apt-get install -y libav-tools
 sudo apt-get install -y libgit2-dev
-sudo apt-get install -y libgit2-22
 sudo apt-get install -y libtiff-dev
 sudo apt-get install -y unixodbc-dev
 sudo apt-get install -y libsodium-dev
