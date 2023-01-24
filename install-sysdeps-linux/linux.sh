@@ -1,3 +1,4 @@
+ldconfig /usr/local/lib/
 sudo apt-get install -y cmake ;    
 sudo apt-get install -y libssh-dev;
 sudo apt-get install -y jags
