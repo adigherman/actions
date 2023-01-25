@@ -1,4 +1,3 @@
-sudo ldconfig /usr/local/lib/ ;
 sudo apt-get install -y cmake ;    
 sudo apt-get install -y libssh-dev;
 sudo apt-get install -y jags
@@ -8,7 +7,7 @@ sudo apt-get install -y dcmtk ;
 sudo apt-get install -y libsecret-1-dev ;
 sudo apt-get install -y libpng-dev ;
 sudo apt-get install -y libpoppler-cpp-dev ;
-sudo apt-get install -y libhdf5-serial-dev libhdf5-dev ;
+sudo apt-get install -y libhdf5-dev ;
 sudo apt-get install -y mesa-common-dev libglu1-mesa-dev ;
 sudo apt-get install -y libprotobuf-dev protobuf-compiler libprotoc-dev ;
 sudo apt-get install -y ffmpeg --allow-unauthenticated ;
@@ -20,7 +19,6 @@ sudo apt-get install -y libmng2 ;
 sudo apt-get install -y libapparmor-dev ;
 sudo apt-get install -y imagej ;
 sudo apt-get install -y bowtie2 ;
-sudo apt-get install -y insighttoolkit4-python libinsighttoolkit4-dev ;
 sudo apt-get install -y libgit2-dev ;
 sudo apt-get install -y libtiff-dev ;
 sudo apt-get install -y unixodbc-dev ;
