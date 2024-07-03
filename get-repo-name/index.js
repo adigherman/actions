@@ -1,4 +1,4 @@
-const core = require('@actions/core@v1.10.0');
+const core = require('@actions/core');
 
 try {
   // `github_slug` input defined in action metadata file
