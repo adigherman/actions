@@ -30,3 +30,4 @@ brew install udunits
 brew install webp 
 brew install rust
 brew install xquartz
+sudo xcode-select -s /Library/Developer/CommandLineTools
