@@ -19,7 +19,6 @@ brew install -v imagej
 brew install bowtie2
 brew install gdal
 brew install itk
-brew install -v libav
 brew install libgit2
 brew install libtiff
 brew install unixodbc
