@@ -157,3 +157,4 @@ pacman --noconfirm -S mingw-w64-x86_64-yasm
 pacman --noconfirm -S mingw-w64-x86_64-zint
 pacman --noconfirm -S mingw-w64-x86_64-zlib
 pacman --noconfirm -S mingw-w64-x86_64-zstd
+pacman --noconfirm -S mingw-w64-x86_64-dcmtk
