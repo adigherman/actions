@@ -30,3 +30,4 @@ sudo apt-get install -y libwebp-dev ;
 sudo apt-get install -y cargo ;
 sudo apt-get install -y qgis ;
 sudo apt-get install -y libharfbuzz-dev libfribidi-dev ;
+sudo apt-get install -y tk-dev ;
