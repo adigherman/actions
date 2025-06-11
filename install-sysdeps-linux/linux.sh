@@ -31,3 +31,4 @@ sudo apt-get install -y cargo ;
 sudo apt-get install -y qgis ;
 sudo apt-get install -y libharfbuzz-dev libfribidi-dev ;
 sudo apt-get install -y tk-dev ;
+sudo apt-get install -y python-h5py ;
