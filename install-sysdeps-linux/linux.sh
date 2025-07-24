@@ -35,5 +35,5 @@ sudo apt-get install -y tidy ;
 sudo apt-get install -y libcurl4-openssl-dev ;
 sudo apt-get install -y libv8-dev ;
 sudo apt-get install -y python3-h5py ;
-sudo apt-get install -y cython ;
+sudo apt-get install -y cython3 ;
 sudo pip3 install -y h5py ;
