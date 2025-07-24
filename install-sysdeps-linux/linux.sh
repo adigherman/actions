@@ -37,3 +37,4 @@ sudo apt-get install -y libv8-dev ;
 sudo apt-get install -y python3-h5py ;
 sudo apt-get install -y cython3 ;
 sudo pip3 install -y h5py ;
+sudo pip3 install -y tensorflow ;
